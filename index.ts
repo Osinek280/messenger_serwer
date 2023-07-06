@@ -6,7 +6,13 @@ const bodyParser = require('body-parser');
 const app: Express = express();
 
 
-app.use(cors({ origin: '*' }));
+app.use(
+  cors({
+    origin: 'https://osinek280.github.io',
+    methods: ['GET', 'POST', 'OPTIONS'],
+  })
+);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 

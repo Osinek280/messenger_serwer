@@ -8,7 +8,10 @@ const uuid_1 = require("uuid");
 const cors_1 = __importDefault(require("cors"));
 const bodyParser = require('body-parser');
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)({ origin: '*' }));
+app.use((0, cors_1.default)({
+    origin: 'https://osinek280.github.io',
+    methods: ['GET', 'POST', 'OPTIONS'],
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const users = [
