@@ -66,20 +66,10 @@ Response:
 - Success: Returns the user object if found.
 - Error: Returns a 404 error if the user is not found.
 
-Response Body:
+Example:
 
 ```http
-  {
-    conversationId: string,
-    secondUserName: string,
-    secondUserImage: string,
-    lastMessage: {
-      id: string,
-      title: string,
-      ownerId: string',
-      conversationId: string,
-      date: number
-  }
+  GET /user/462dbe84-b7b2-40f3-849b-2843627b06e9
 ```
 
 #### Get Conversations
@@ -96,10 +86,20 @@ Response:
 
  - Success: Returns an array of conversations with details such as the conversation ID,   the second user's name and image, and the last message in the conversation.
 
-Example:
+Response Body:
 
 ```http
-  GET /conversations?userId=462dbe84-b7b2-40f3-849b-2843627b06e9
+  {
+    conversationId: string,
+    secondUserName: string,
+    secondUserImage: string,
+    lastMessage: {
+      id: string,
+      title: string,
+      ownerId: string',
+      conversationId: string,
+      date: number
+  }
 ```
 
 #### Get Messages
@@ -142,9 +142,7 @@ Response:
 
 Example:
 
-```http
-  POST /messages
-  
+```http  
   {
     "title": "New Message",
     "ownerId": "462dbe84-b7b2-40f3-849b-2843627b06e9",
@@ -172,8 +170,6 @@ Response:
 Example:
 
 ```http
-  POST /login
-
   {
     "login": "john@example.com",
     "password": "123"
