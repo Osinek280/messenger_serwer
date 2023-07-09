@@ -8,16 +8,13 @@ const uuid_1 = require("uuid");
 const cors_1 = __importDefault(require("cors"));
 const bodyParser = require('body-parser');
 const app = (0, express_1.default)();
-app.use((0, cors_1.default)({
-    origin: 'https://osinek280.github.io',
-    methods: ['GET', 'POST', 'OPTIONS'],
-}));
+app.use((0, cors_1.default)({ origin: '*' }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 const users = [
-    { id: '462dbe84-b7b2-40f3-849b-2843627b06e9', username: 'John Doe', login: 'john@example.com', password: 'monkey1235', img: 'https://randomuser.me/api/portraits/men/18.jpg' },
-    { id: '51839902-64f0-4110-a55d-21ca4f592d58', username: 'Jane Smith', login: 'jane@example.com', password: 'monkey1235', img: 'https://randomuser.me/api/portraits/women/94.jpg' },
-    { id: 'd29c805d-8903-42e9-a6e0-d5daa9f728f3', username: 'Alice Johnson', login: 'alice@example.com', password: 'monkey1235', img: 'https://randomuser.me/api/portraits/men/48.jpg' },
+    { id: '462dbe84-b7b2-40f3-849b-2843627b06e9', username: 'John Doe', login: 'john@example.com', password: '123', img: 'https://randomuser.me/api/portraits/men/18.jpg' },
+    { id: '51839902-64f0-4110-a55d-21ca4f592d58', username: 'Jane Smith', login: 'jane@example.com', password: '123', img: 'https://randomuser.me/api/portraits/women/94.jpg' },
+    { id: 'd29c805d-8903-42e9-a6e0-d5daa9f728f3', username: 'Alice Johnson', login: 'alice@example.com', password: '123', img: 'https://randomuser.me/api/portraits/men/48.jpg' },
 ];
 const conversations = [
     { id: 'e8408761-aea6-4234-a531-4b83927df02a', usersId: ['462dbe84-b7b2-40f3-849b-2843627b06e9', '51839902-64f0-4110-a55d-21ca4f592d58'], lastActive: 1625136000 },
